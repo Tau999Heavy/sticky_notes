@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<a href="{% url 'note_create' %}" class="create-btn">
+    Create New Note
+</a>
+
+<hr>
+
+<div class="notes-container">
+
+    {% for note in notes %}
+
+    <div class="note">
+        <h2>{{ note.title }}</h2>
+
+        <p>{{ note.content }}</p>
+
+        <a href="{% url 'note_update' note.id %}"
+           class="edit-link">
+            Edit
+        </a>
+
+        |
+
+        <a href="{% url 'note_delete' note.id %}"
+           class="delete-link">
+            Delete
+        </a>
+    </div>
+
+    {% empty %}
+
+    <p>No notes available.</p>
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}

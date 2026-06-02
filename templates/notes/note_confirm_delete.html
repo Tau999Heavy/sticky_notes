@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<a href="{% url 'note_list' %}" class="back-btn">
+    ← Cancel
+</a>
+
+<hr>
+
+<h2>Delete Note</h2>
+
+<p>
+    Are you sure you want to delete
+    "{{ note.title }}"?
+</p>
+
+<form method="post">
+
+    {% csrf_token %}
+
+<div class="delete-warning">
+
+    <button type="submit" class="delete-btn">
+        Confirm Delete
+    </button>
+
+    <span class="warning-text">
+        Please note: this is irreversible.
+    </span>
+
+</div>
+
+</form>
+
+{% endblock %}

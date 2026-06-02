@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<a href="{% url 'note_list' %}" class="back-btn">
+    ← Back to Notes
+</a>
+
+<div class="form-divider"></div>
+
+<div class="note-editor">
+
+    <form method="post">
+
+        {% csrf_token %}
+
+        <div class="form-group">
+            {{ form.title.label_tag }}
+            {{ form.title }}
+        </div>
+
+        <div class="form-group">
+            {{ form.content.label_tag }}
+            {{ form.content }}
+        </div>
+
+        <button type="submit">
+            Save Note
+        </button>
+
+    </form>
+
+</div>
+
+{% endblock %}
