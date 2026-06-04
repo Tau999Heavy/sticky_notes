@@ -6,6 +6,8 @@ from .models import Note
 
 
 class NoteModelTest(TestCase):
+        """Tests for the Note model."""
+
 
     def setUp(self):
         self.note = Note.objects.create(
@@ -27,6 +29,7 @@ class NoteModelTest(TestCase):
 
 
 class NoteViewTest(TestCase):
+    """Tests for note views and CRUD functionality."""
 
     def setUp(self):
         self.note = Note.objects.create(
