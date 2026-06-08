@@ -6,7 +6,7 @@ from .models import Note
 
 
 class NoteModelTest(TestCase):
-        """Tests for the Note model."""
+    """Tests for the Note model."""
 
 
     def setUp(self):
